@@ -1,0 +1,52 @@
+---
+title: "Analysis of the *mtcars* Dataset"
+author: "Joan Marine-Boada"
+date: "30/04/2021"
+output: ioslides_presentation
+---
+
+## The goal of our analysis
+
+The relationship between miles per gallon (MPG) and the other variables of the dataset. 
+We have a data set of a collection of cars, and we are interested in exploring the relationship between a set of variables and miles per gallon (MPG).
+The App user can choose the variable which he wants to compare, and we display a plot of a boxplot and the linear regression analysis. The user can choose too if the outliers appear or not.
+
+The *mtcars* Dataset was extracted from the 1974 Motor Trend US magazine,and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973-74 models)
+
+## The Dataset Format
+
+We work with a data frame with 32 observations on 11 (numeric) variables.
+
+Let's look the first rows:
+
+```{r, comment=""}
+library(datasets)
+head(mtcars)
+```
+
+## The *MPG* variable
+
+Due to our analysis is centered on the relationship between miles per gallon (MPG) and the other variables, let's look at our main variable:
+
+```{r, comment=""}
+summary(mtcars$mpg)
+```
+
+## The *MPG* variable
+
+We can see the distribution's shape of the variable if we plot its histogram.
+
+```{r, echo=FALSE}
+library(ggplot2)
+g<-ggplot(mtcars, aes(x=mpg))+
+    theme_bw()+ 
+    geom_histogram(alpha=0.3,
+                   binwidth=5.5,
+                   colour="gold2", 
+                   fill="gold2")+
+    theme(axis.title.x=element_text(size=20),
+          axis.title.y=element_text(size=20))+
+    xlab("MPG")+
+    ylab("Frequency")
+g
+```
