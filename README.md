@@ -2,4 +2,5 @@
 
 This repository contains the files of the Developing Data Products course final project.
 
- [Shiny Application](http://joanmarine.shinyapps.io/my_app/)
+Here the app [Shiny Application](http://joanmarine.shinyapps.io/my_app/)
+ 
